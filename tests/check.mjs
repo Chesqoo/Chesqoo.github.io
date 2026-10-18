@@ -58,6 +58,16 @@ check('langSafe', () => {
   assert.strictEqual(tries, n, `localStorage=${n}, dentro de try/catch=${tries}`);
   assert.ok(/===\s*'es'/.test(js), 'solo debe aceptar "es"');
 });
+check('meta', () => {
+  for (const s of [
+    'name="description"', 'property="og:title"',
+    'property="og:image" content="https://chesqoo.github.io/og.png"',
+    'name="twitter:card" content="summary_large_image"',
+    'rel="icon" href="favicon.svg"', 'name="theme-color"',
+    'rel="canonical" href="https://chesqoo.github.io/"',
+  ]) assert.ok(html.includes(s), `falta ${s}`);
+  assert.ok(!read('404.html').includes('—'), '404 con raya larga');
+});
 
 let failed = 0;
 for (const [name, fn] of checks) {
