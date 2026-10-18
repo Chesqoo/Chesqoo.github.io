@@ -51,7 +51,7 @@ Lo que la hace suya:
 |---|---|
 | **Barra** | Nombre a la izquierda, «Madrid» y el selector EN / ES a la derecha. Debajo, un filete negro de 2 px |
 | **Titular** | «Local AI, useful and *secure.*» / «IA local, útil y *segura.*», en tres líneas y con la última palabra en rojo |
-| **Entradilla** | «I research artificial intelligence and cyberintelligence. The rest of the time I build things I believe are worth having.» / «Investigo en inteligencia artificial y ciberinteligencia. El resto del tiempo hago cosas que creo que aportan valor.» |
+| **Entradilla** | «Researcher in artificial intelligence and cyberintelligence. The rest of the time I build things I believe are worth having.» / «Investigador en inteligencia artificial y ciberinteligencia. El resto del tiempo hago cosas que creo que aportan valor.» |
 | **01 Now / Ahora** | Tres frases grandes y paralelas (ver abajo) |
 | **02 Things I made / Cosas que he hecho** | paper-repo, Montepío y QRated |
 | **03 Contact / Contacto** | «Let's talk.» / «Hablemos.» en grande, el correo debajo y los enlaces GitHub y LinkedIn |
@@ -102,7 +102,7 @@ El rojo solo aparece en: la última palabra del titular, los números de secció
 ### Idioma
 
 - Inglés por defecto (`<html lang="en">`).
-- El botón ES cambia todos los textos al momento, sin recargar y sin que se mueva nada que no sea texto.
+- El botón ES cambia todos los textos sin recargar. Animación «blob» (cambio del 2026-10-18, pedido por Francisco): las letras se funden en manchas y de ellas salen las del otro idioma. Solo se transforma el texto bilingüe; filetes, números y botones quedan fijos.
 - `lang` del `<html>` y `aria-pressed` de los botones se actualizan.
 
 ### Movimiento
@@ -114,9 +114,11 @@ El rojo solo aparece en: la última palabra del titular, los números de secció
 
 La misma rejilla sobre un fondo casi negro, con el mismo rojo (ajustado si hace falta para el contraste).
 
+Cambio del 2026-10-18, pedido por Francisco: botón de tema (círculo medio relleno) junto a EN / ES. Sin pulsar, sigue el sistema; la elección se recuerda. Animación «geometría»: el tema nuevo aparece a través de círculos, cuadrados, rombos, triángulos y semicírculos que crecen desde el botón. Sin View Transitions, el cambio es instantáneo. Con `prefers-reduced-motion`, ambos cambios son instantáneos.
+
 ## Lo que decide quien lo construya (y mis decisiones, marcadas)
 
-- **Mía:** el tema oscuro sigue `prefers-color-scheme`, sin botón. En un cartel, cuantos menos controles, mejor.
+- ~~**Mía:** el tema oscuro sigue `prefers-color-scheme`, sin botón.~~ Sustituida: Francisco pidió el botón (ver «Tema oscuro»).
 - **Mía:** el idioma elegido se recuerda en `localStorage`, envuelto en try/catch. No se autodetecta: el inglés es lo que pidió por defecto.
 - **Mía:** Archivo se aloja en el repo (woff2, subconjunto latino) con `preload`, para que la fuente no cambie de golpe al cargar. Si se usa una fuente de respaldo, con `size-adjust`.
 - Cómo se guardan los textos bilingües: el boceto duplica cada texto con `lang` y lo oculta por CSS. Vale mantenerlo así.

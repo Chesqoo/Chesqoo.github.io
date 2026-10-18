@@ -15,9 +15,16 @@ a { color: inherit; text-decoration: none; }
 .bar { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 20px; padding: 18px 0 12px; border-bottom: 2px solid var(--rule); font-size: 13.5px; }
 .bar .n { grid-column: 1 / 7; font-weight: 700; }
 .bar .r { grid-column: 7 / 11; color: var(--grey); }
-.bar .l { grid-column: 11 / 13; justify-self: end; display: flex; gap: 2px; }
+.bar .l { grid-column: 11 / 13; justify-self: end; display: flex; gap: 2px; align-items: center; }
 .bar button { font: inherit; background: none; border: 0; padding: 2px 6px; cursor: pointer; color: var(--grey); border-radius: 2px; }
 .bar button[aria-pressed="true"] { color: var(--ink); font-weight: 700; box-shadow: inset 0 -2px 0 var(--red); }
+.bar .sep { width: 1px; height: 14px; background: var(--hair); margin: 0 6px; }
+.bar .theme { display: grid; place-items: center; width: 28px; height: 22px; }
+.bar .theme[aria-pressed] { box-shadow: none; }
+.bar .theme i { width: 13px; height: 13px; border: 1.5px solid currentColor; border-radius: 50%;
+  background: linear-gradient(90deg, currentColor 50%, transparent 50%); transition: transform .5s cubic-bezier(.2,.7,.2,1); }
+.bar .theme[aria-pressed="true"] i { transform: rotate(180deg); }
+.bar .theme:hover { color: var(--ink); }
 
 .hero { padding: clamp(56px, 11vw, 150px) 0 clamp(48px, 8vw, 120px); }
 .hero h1 { grid-column: 1 / -1; font-weight: 900; font-size: clamp(56px, 11.5vw, 168px); line-height: .86; letter-spacing: -0.045em; }
@@ -63,8 +70,21 @@ section.s { border-top: 2px solid var(--rule); padding: 14px 0 clamp(56px, 8vw, 
 }
 
 @media (prefers-color-scheme: dark) {
-  :root { --bg: #121211; --ink: #f2f1ed; --grey: #9a978f; --hair: #34332f; --rule: #f2f1ed; --red: #e5492f; --red-small: #e5492f; }
+  :root:not([data-theme="light"]) { --bg: #121211; --ink: #f2f1ed; --grey: #9a978f; --hair: #34332f; --rule: #f2f1ed; --red: #e5492f; --red-small: #e5492f; }
 }
+:root[data-theme="dark"] { --bg: #121211; --ink: #f2f1ed; --grey: #9a978f; --hair: #34332f; --rule: #f2f1ed; --red: #e5492f; --red-small: #e5492f; }
+
+/* Cambio de idioma: blob solo en el texto bilingüe (filtro #goo creado por site.js). */
+.gooing { filter: url(#goo); }
+span.gooing { display: inline-block; }
+
+/* Cambio de tema: el tema nuevo aparece a través de la máscara de figuras (--geo, de site.js). */
+::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+html[data-vt="geo"]::view-transition-new(root) {
+  -webkit-mask: var(--geo) 0 0 / 100% 100% no-repeat; mask: var(--geo) 0 0 / 100% 100% no-repeat;
+  animation: geo-hold 1.05s linear both;
+}
+@keyframes geo-hold { from { opacity: 1; } to { opacity: 1; } }
 
 .hero h1 { animation: rise .7s cubic-bezier(.2,.7,.2,1) both; }
 @keyframes rise { from { opacity: 0; transform: translateY(14px); } }

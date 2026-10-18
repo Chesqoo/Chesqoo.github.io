@@ -50,13 +50,23 @@ check('contrast', () => {
   }
 });
 check('langSafe', () => {
-  const js = read('lang.js');
+  const js = read('site.js');
   const n = count(js, /localStorage/g);
   assert.ok(n > 0, 'no usa localStorage');
   // cada localStorage va dentro de un try { ... } catch
   const tries = count(js, /try\s*\{[^}]*localStorage[^}]*\}\s*catch/g);
   assert.strictEqual(tries, n, `localStorage=${n}, dentro de try/catch=${tries}`);
   assert.ok(/===\s*'es'/.test(js), 'solo debe aceptar "es"');
+  assert.ok(/===\s*'dark'\s*\|\|\s*\w+\s*===\s*'light'/.test(js), 'el tema guardado solo acepta "dark" o "light"');
+});
+check('themeTokens', () => {
+  // El modo oscuro elegido a mano debe usar los mismos tokens que el del sistema.
+  const css = read('styles.css');
+  const sys = css.match(/:root:not\(\[data-theme="light"\]\)\s*\{([^}]*)\}/);
+  const forced = css.match(/:root\[data-theme="dark"\]\s*\{([^}]*)\}/);
+  assert.ok(sys && forced, 'faltan los bloques de tema oscuro');
+  assert.strictEqual(forced[1].trim(), sys[1].trim());
+  for (const f of ['index.html', '404.html']) assert.ok(read(f).includes('class="theme"'), `${f} sin botón de tema`);
 });
 check('meta', () => {
   for (const s of [
