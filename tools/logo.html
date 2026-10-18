@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Logo</title>
+<!-- Fuente del logo (F blanca con punto rojo). Se captura con Edge sin interfaz a 512, 180 y 64 px:
+     logo.png (vista previa al compartir), apple-touch-icon.png y favicon.png. Todo va en vw: vale para cualquier tamaño. -->
+<style>
+  @font-face { font-family: 'Archivo'; src: url(../fonts/archivo-latin.woff2) format('woff2'); font-weight: 100 900; }
+  html, body { margin: 0; width: 100vw; height: 100vh; overflow: hidden; background: #111111; }
+  body { display: grid; place-items: center; }
+  span { font: 900 72.7vw/1 'Archivo', sans-serif; letter-spacing: -0.05em; color: #f2f1ed; transform: translateX(-3.4vw); }
+  em { font-style: normal; color: #d8371f; }
+</style>
+</head>
+<body><span>F<em>.</em></span></body>
+</html>

@@ -125,6 +125,7 @@ Cambio del 2026-10-18, pedido por Francisco: botón de tema (círculo medio rell
 - Valores exactos del tema oscuro.
 - Comprobar el contraste del rojo sobre el fondo en textos pequeños (los «01») y oscurecerlo solo ahí si no llega a 4.5:1.
 - Metadatos: `<title>`, descripción, Open Graph con una imagen que imite el titular del cartel, y favicon sobrio (por ejemplo, un cuadrado rojo).
+  Cambio del 2026-10-18, pedido por Francisco: la imagen grande se recortaba en WhatsApp. Ahora la vista previa usa un logo cuadrado (logo A: «F» blanca sobre tinta con punto rojo, `tools/logo.html` → `logo.png` 512, `apple-touch-icon.png` 180 y `favicon.png` 64), con `twitter:card` summary. Título: «Francisco Javier Morales · AI Research». Descripción: «Researcher in AI and cyberintelligence. I build things that add value.»
 - Página 404 con el mismo estilo.
 
 ## Publicación

@@ -71,9 +71,9 @@ check('themeTokens', () => {
 check('meta', () => {
   for (const s of [
     'name="description"', 'property="og:title"',
-    'property="og:image" content="https://chesqoo.github.io/og.png"',
-    'name="twitter:card" content="summary_large_image"',
-    'rel="icon" href="favicon.svg"', 'name="theme-color"',
+    'property="og:image" content="https://chesqoo.github.io/logo.png"',
+    'name="twitter:card" content="summary"', 'property="og:image:width" content="512"',
+    'rel="icon" href="favicon.png"', 'rel="apple-touch-icon"', 'name="theme-color"',
     'rel="canonical" href="https://chesqoo.github.io/"',
   ]) assert.ok(html.includes(s), `falta ${s}`);
   const nf = read('404.html');
