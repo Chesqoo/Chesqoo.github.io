@@ -11,7 +11,7 @@ Lo que la hace suya:
 
 - **Distinta a sus apps.** paper-repo, Montepío y QRated comparten una estética de papel y tinta. Aquí no la quiere: «no quiero que parezca un folio».
 - **Cartel suizo.** Eligió esta dirección frente a un portfolio oscuro clásico, un plano técnico y una página de manual. Tipografía grotesca enorme, rejilla, filetes negros y un solo rojo.
-- **Misterio, no currículum.** Rechazó las cifras de su trabajo y los detalles concretos («demasiado cantoso»). La web insinúa; el detalle está en el CV y en LinkedIn.
+- **Misterio, no currículum.** Rechazó las cifras de su trabajo y los detalles concretos («demasiado cantoso»). La web insinúa; el detalle está en LinkedIn. No se enlaza ningún CV.
 - **Sobria.** Rechazó las metáforas ingeniosas («IA que guarda secretos» le pareció cheesy y cutre). Frases llanas y cortas.
 - **Lo que le importa es aportar valor**, no cuánta gente usa lo que hace.
 
@@ -54,7 +54,7 @@ Lo que la hace suya:
 | **Entradilla** | «I research artificial intelligence and cyberintelligence. The rest of the time I build things I believe are worth having.» / «Investigo en inteligencia artificial y ciberinteligencia. El resto del tiempo hago cosas que creo que aportan valor.» |
 | **01 Now / Ahora** | Tres frases grandes y paralelas (ver abajo) |
 | **02 Things I made / Cosas que he hecho** | paper-repo, Montepío y QRated |
-| **03 Contact / Contacto** | «Let's talk.» / «Hablemos.» en grande, el correo debajo y los enlaces GitHub, LinkedIn y CV |
+| **03 Contact / Contacto** | «Let's talk.» / «Hablemos.» en grande, el correo debajo y los enlaces GitHub y LinkedIn |
 | **Pie** | «Madrid, 2026» y «Set in Archivo» / «Compuesto en Archivo» |
 
 ### Ahora / Now
@@ -80,7 +80,7 @@ Las filas con enlace son enteras clicables. Al pasar el ratón, el nombre y la f
 - Correo: `francisco.j.moralessp@gmail.com`, como `mailto:`.
 - GitHub: `https://github.com/Chesqoo`.
 - LinkedIn: **pendiente**; Francisco pasará la URL.
-- CV: **pendiente** (ver «Abierto»).
+- CV: **ninguno**. Decisión de Francisco: el detalle va en LinkedIn.
 
 ### Sistema visual
 
@@ -128,8 +128,7 @@ La misma rejilla sobre un fondo casi negro, con el mismo rojo (ajustado si hace 
 ## Abierto (lo decide Francisco)
 
 - **URL de LinkedIn.**
-- **CV público.** El PDF actual incluye su teléfono. Hay que decidir si se publica una versión sin teléfono, se enlaza a LinkedIn o no hay enlace al CV.
 
-**Mía:** mientras no haya respuesta, el enlace afectado no se muestra. La web puede publicarse sin ellos.
+**Mía:** mientras no llegue la URL, el enlace a LinkedIn no se muestra. La web puede publicarse sin él.
 
 Crear el repo en GitHub y publicar son pasos que Francisco confirma antes de hacerlos.
