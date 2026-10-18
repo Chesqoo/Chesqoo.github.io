@@ -1,6 +1,7 @@
 @font-face { font-family: 'Archivo'; src: url(fonts/archivo-latin.woff2) format('woff2'); font-weight: 100 900; font-display: block; }
 
 :root {
+  color-scheme: light dark;
   --bg: #f2f1ed; --ink: #111111; --grey: #6f6d67; --rule: #111111; --hair: #cfcdc6; --red: #d8371f; --red-small: #cc3216;
   --gx: clamp(16px, 4vw, 48px);
 }
@@ -58,6 +59,7 @@ section.s { border-top: 2px solid var(--rule); padding: 14px 0 clamp(56px, 8vw, 
   .bar .n { grid-column: 1 / 9; } .bar .r { display: none; } .bar .l { grid-column: 9 / 13; }
   .hero .intro { grid-column: 1 / -1; }
   .s .lab, .s .body { grid-column: 1 / -1; } .s .lab { margin-bottom: 22px; }
+  .proj.soon h3 { white-space: nowrap; } .proj.soon .ar { grid-column: 2 / 4; }
 }
 
 @media (prefers-color-scheme: dark) {
