@@ -49,6 +49,15 @@ check('contrast', () => {
     }
   }
 });
+check('langSafe', () => {
+  const js = read('lang.js');
+  const n = count(js, /localStorage/g);
+  assert.ok(n > 0, 'no usa localStorage');
+  // cada localStorage va dentro de un try { ... } catch
+  const tries = count(js, /try\s*\{[^}]*localStorage[^}]*\}\s*catch/g);
+  assert.strictEqual(tries, n, `localStorage=${n}, dentro de try/catch=${tries}`);
+  assert.ok(/===\s*'es'/.test(js), 'solo debe aceptar "es"');
+});
 
 let failed = 0;
 for (const [name, fn] of checks) {
