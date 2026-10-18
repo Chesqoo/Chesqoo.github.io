@@ -66,7 +66,9 @@ check('meta', () => {
     'rel="icon" href="favicon.svg"', 'name="theme-color"',
     'rel="canonical" href="https://chesqoo.github.io/"',
   ]) assert.ok(html.includes(s), `falta ${s}`);
-  assert.ok(!read('404.html').includes('—'), '404 con raya larga');
+  const nf = read('404.html');
+  assert.ok(!nf.includes('—'), '404 con raya larga');
+  for (const s of ['Nothing here.', 'Aquí no hay nada.', 'href="/"']) assert.ok(nf.includes(s), `404 sin ${s}`);
 });
 
 let failed = 0;

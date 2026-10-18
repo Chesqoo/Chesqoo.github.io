@@ -48,6 +48,8 @@ section.s { border-top: 2px solid var(--rule); padding: 14px 0 clamp(56px, 8vw, 
 .contact .big { font-weight: 900; font-size: clamp(40px, 7vw, 104px); letter-spacing: -0.045em; line-height: .95; }
 .contact .mail { display: inline-block; margin-top: 18px; font-size: clamp(17px, 1.6vw, 21px); box-shadow: inset 0 -2px 0 var(--red); overflow-wrap: anywhere; }
 .contact .mail:hover { color: var(--red-small); }
+.back { display: inline-block; margin-top: 18px; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.back:hover { color: var(--red-small); }
 .links { display: flex; gap: 28px; flex-wrap: wrap; margin-top: 40px; padding-top: 12px; border-top: 1px solid var(--hair); font-weight: 700; }
 .links a:hover { color: var(--red-small); }
 .foot { display: flex; justify-content: space-between; color: var(--grey); font-size: 13px; padding: 8px 0 28px; }
