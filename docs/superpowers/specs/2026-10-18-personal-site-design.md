@@ -79,7 +79,7 @@ Las filas con enlace son enteras clicables. Al pasar el ratón, el nombre y la f
 
 - Correo: `francisco.j.moralessp@gmail.com`, como `mailto:`.
 - GitHub: `https://github.com/Chesqoo`.
-- LinkedIn: **pendiente**; Francisco pasará la URL.
+- LinkedIn: `https://www.linkedin.com/in/francisco-javier-moralessp/`.
 - CV: **ninguno**. Decisión de Francisco: el detalle va en LinkedIn.
 
 ### Sistema visual
@@ -125,10 +125,6 @@ La misma rejilla sobre un fondo casi negro, con el mismo rojo (ajustado si hace 
 - Metadatos: `<title>`, descripción, Open Graph con una imagen que imite el titular del cartel, y favicon sobrio (por ejemplo, un cuadrado rojo).
 - Página 404 con el mismo estilo.
 
-## Abierto (lo decide Francisco)
-
-- **URL de LinkedIn.**
-
-**Mía:** mientras no llegue la URL, el enlace a LinkedIn no se muestra. La web puede publicarse sin él.
+## Publicación
 
 Crear el repo en GitHub y publicar son pasos que Francisco confirma antes de hacerlos.
