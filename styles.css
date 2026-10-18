@@ -1,7 +1,7 @@
 @font-face { font-family: 'Archivo'; src: url(fonts/archivo-latin.woff2) format('woff2'); font-weight: 100 900; font-display: block; }
 
 :root {
-  --bg: #f2f1ed; --ink: #111111; --grey: #6f6d67; --rule: #111111; --hair: #cfcdc6; --red: #cc3216;
+  --bg: #f2f1ed; --ink: #111111; --grey: #6f6d67; --rule: #111111; --hair: #cfcdc6; --red: #d8371f; --red-small: #cc3216;
   --gx: clamp(16px, 4vw, 48px);
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -25,7 +25,7 @@ a { color: inherit; text-decoration: none; }
 
 section.s { border-top: 2px solid var(--rule); padding: 14px 0 clamp(56px, 8vw, 112px); }
 .s .lab { grid-column: 1 / 4; font-weight: 700; font-size: 15px; }
-.s .lab span:first-child { color: var(--red); margin-right: 8px; }
+.s .lab span:first-child { color: var(--red-small); margin-right: 8px; }
 .s .body { grid-column: 4 / 13; }
 
 .now { font-weight: 700; font-size: clamp(26px, 3.2vw, 44px); line-height: 1.1; letter-spacing: -0.025em; }
@@ -47,9 +47,9 @@ section.s { border-top: 2px solid var(--rule); padding: 14px 0 clamp(56px, 8vw, 
 .contact .body { padding-bottom: 12px; }
 .contact .big { font-weight: 900; font-size: clamp(40px, 7vw, 104px); letter-spacing: -0.045em; line-height: .95; }
 .contact .mail { display: inline-block; margin-top: 18px; font-size: clamp(17px, 1.6vw, 21px); box-shadow: inset 0 -2px 0 var(--red); overflow-wrap: anywhere; }
-.contact .mail:hover { color: var(--red); }
+.contact .mail:hover { color: var(--red-small); }
 .links { display: flex; gap: 28px; flex-wrap: wrap; margin-top: 40px; padding-top: 12px; border-top: 1px solid var(--hair); font-weight: 700; }
-.links a:hover { color: var(--red); }
+.links a:hover { color: var(--red-small); }
 .foot { display: flex; justify-content: space-between; color: var(--grey); font-size: 13px; padding: 8px 0 28px; }
 
 @media (max-width: 760px) {
@@ -59,7 +59,7 @@ section.s { border-top: 2px solid var(--rule); padding: 14px 0 clamp(56px, 8vw, 
 }
 
 @media (prefers-color-scheme: dark) {
-  :root { --bg: #121211; --ink: #f2f1ed; --grey: #9a978f; --hair: #34332f; --rule: #f2f1ed; --red: #e5492f; }
+  :root { --bg: #121211; --ink: #f2f1ed; --grey: #9a978f; --hair: #34332f; --rule: #f2f1ed; --red: #e5492f; --red-small: #e5492f; }
 }
 
 .hero h1 { animation: rise .7s cubic-bezier(.2,.7,.2,1) both; }

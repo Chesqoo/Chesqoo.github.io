@@ -42,10 +42,10 @@ check('contrast', () => {
   assert.ok(dark && light, 'faltan bloques de tokens');
   for (const [theme, blk] of [['claro', light[1]], ['oscuro', dark[1]]]) {
     const v = (n) => (blk.match(new RegExp(`--${n}: *(#[0-9a-fA-F]{6})`)) || [])[1];
-    for (const t of ['ink', 'grey', 'red']) {
+    for (const [t, min] of [['ink', 4.5], ['grey', 4.5], ['red-small', 4.5], ['red', 3]]) {
       assert.ok(v(t) && v('bg'), `${theme}: falta --${t} o --bg`);
       const r = contrast(v(t), v('bg'));
-      assert.ok(r >= 4.5, `${theme} ${t} ${v(t)} sobre ${v('bg')} = ${r.toFixed(2)}`);
+      assert.ok(r >= min, `${theme} ${t} ${v(t)} sobre ${v('bg')} = ${r.toFixed(2)}`);
     }
   }
 });
