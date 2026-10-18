@@ -76,7 +76,6 @@ section.s { border-top: 2px solid var(--rule); padding: 14px 0 clamp(56px, 8vw, 
 
 /* Cambio de idioma: blob solo en el texto bilingüe (filtro #goo creado por site.js). */
 .gooing { filter: url(#goo); }
-span.gooing { display: inline-block; }
 
 /* Cambio de tema: el tema nuevo aparece a través de la máscara de figuras (--geo, de site.js). */
 ::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }

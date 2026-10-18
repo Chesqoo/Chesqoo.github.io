@@ -22,6 +22,20 @@
     if (t) { t.setAttribute('aria-pressed', String(isDark())); t.setAttribute('aria-label', isDark() ? 'Light mode' : 'Dark mode'); }
   }
 
+
+  // Cada bloque con textos bilingües reserva el alto del idioma más largo: al cambiar no se mueve nada.
+  function reserve() {
+    var ps = [], els = document.querySelectorAll('.wrap [lang]'), i;
+    for (i = 0; i < els.length; i++) if (ps.indexOf(els[i].parentElement) < 0) ps.push(els[i].parentElement);
+    var cur = root.className, other = cur === 'es' ? 'en' : 'es', h = [];
+    for (i = 0; i < ps.length; i++) ps[i].style.minHeight = '';
+    for (i = 0; i < ps.length; i++) h[i] = ps[i].getBoundingClientRect().height;
+    root.className = other;
+    for (i = 0; i < ps.length; i++) h[i] = Math.max(h[i], ps[i].getBoundingClientRect().height);
+    root.className = cur;
+    for (i = 0; i < ps.length; i++) ps[i].style.minHeight = Math.ceil(h[i]) + 'px';
+  }
+
   // Idioma: las letras se funden en manchas (desenfoque + umbral de alfa) y de ahí salen las del otro idioma.
   // Solo se filtran los textos bilingües; filetes, números y botones no se mueven.
   function blob(change) {
@@ -104,5 +118,9 @@
     var t = document.querySelector('.theme');
     if (t) t.addEventListener('click', function () { toggleTheme(this); });
     sync();
+    reserve();
+    if (document.fonts) document.fonts.ready.then(reserve);
+    var raf = 0;
+    addEventListener('resize', function () { cancelAnimationFrame(raf); raf = requestAnimationFrame(reserve); });
   });
 })();
