@@ -50,7 +50,7 @@ Lo que la hace suya:
 | Bloque | Contenido |
 |---|---|
 | **Barra** | Nombre a la izquierda, «Madrid» y el selector EN / ES a la derecha. Debajo, un filete negro de 2 px |
-| **Titular** | «Local AI, useful and *secure.*» / «IA local, útil y *segura.*», en tres líneas y con la última palabra en rojo |
+| **Titular** | «Local AI, useful, *secure.*» / «IA Local, útil y *segura.*», en tres líneas y con la última palabra en rojo |
 | **Entradilla** | «Researcher in artificial intelligence and cyberintelligence. The rest of the time I build things I believe are worth having.» / «Investigador en inteligencia artificial y ciberinteligencia. El resto del tiempo hago cosas que creo que aportan valor.» |
 | **01 Now / Ahora** | Tres frases grandes y paralelas (ver abajo) |
 | **02 Things I made / Cosas que he hecho** | paper-repo, Montepío y QRated |
