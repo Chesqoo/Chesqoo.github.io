@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" class="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Francisco Javier Morales</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f2f1ed; --ink: #111111; --grey: #6f6d67; --rule: #111111; --hair: #cfcdc6; --red: #d8371f;
+    --gx: clamp(16px, 4vw, 48px);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html.en [lang="es"], html.es [lang="en"] { display: none; }
+  body { background: var(--bg); color: var(--ink); font: 400 16px/1.45 'Archivo', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 0 var(--gx); }
+  .grid { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 20px; }
+
+  .bar { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 20px; padding: 18px 0 12px; border-bottom: 2px solid var(--rule); font-size: 13.5px; }
+  .bar .n { grid-column: 1 / 7; font-weight: 700; }
+  .bar .r { grid-column: 7 / 11; color: var(--grey); }
+  .bar .l { grid-column: 11 / 13; justify-self: end; display: flex; gap: 2px; }
+  .bar button { font: inherit; background: none; border: 0; padding: 2px 6px; cursor: pointer; color: var(--grey); border-radius: 2px; }
+  .bar button[aria-pressed="true"] { color: var(--ink); font-weight: 700; box-shadow: inset 0 -2px 0 var(--red); }
+
+  .hero { padding: clamp(56px, 11vw, 150px) 0 clamp(48px, 8vw, 120px); }
+  .hero h1 { grid-column: 1 / -1; font-weight: 900; font-size: clamp(56px, 11.5vw, 168px); line-height: .86; letter-spacing: -0.045em; }
+  .hero h1 em { font-style: normal; color: var(--red); }
+  .hero .intro { grid-column: 7 / 13; margin-top: clamp(28px, 4vw, 48px); font-size: clamp(17px, 1.6vw, 21px); line-height: 1.4; }
+
+  section.s { border-top: 2px solid var(--rule); padding: 14px 0 clamp(56px, 8vw, 112px); }
+  .s .lab { grid-column: 1 / 4; font-weight: 700; font-size: 15px; }
+  .s .lab span:first-child { color: var(--red); margin-right: 8px; }
+  .s .body { grid-column: 4 / 13; }
+
+  .now { font-weight: 700; font-size: clamp(26px, 3.2vw, 44px); line-height: 1.1; letter-spacing: -0.025em; }
+  .now li { list-style: none; padding: 10px 0 14px; border-top: 1px solid var(--hair); }
+  .now li:first-child { border-top: 0; padding-top: 0; }
+  .now li small { display: block; font-weight: 400; font-size: 15px; letter-spacing: 0; color: var(--grey); margin-top: 6px; }
+
+  .proj { display: grid; grid-template-columns: 3em 1fr auto; column-gap: 20px; align-items: baseline; padding: 16px 0 20px; border-top: 1px solid var(--hair); }
+  .proj:first-child { border-top: 0; padding-top: 0; }
+  .proj .i { color: var(--grey); font-size: 14px; }
+  .proj h3 { font-weight: 900; font-size: clamp(30px, 4.2vw, 56px); letter-spacing: -0.035em; line-height: 1; transition: color .25s; }
+  .proj .ar { font-size: clamp(22px, 2.4vw, 32px); transition: transform .25s, color .25s; }
+  .proj p { grid-column: 2 / 4; margin-top: 8px; max-width: 58ch; }
+  .proj:hover h3, .proj:hover .ar { color: var(--red); }
+  .proj:hover .ar { transform: translateX(6px); }
+  .proj.soon .ar { font-size: 14px; color: var(--grey); }
+  .proj.soon:hover h3 { color: inherit; } .proj.soon:hover .ar { color: var(--grey); transform: none; }
+
+  .contact .body { padding-bottom: 12px; }
+  .contact .big { font-weight: 900; font-size: clamp(40px, 7vw, 104px); letter-spacing: -0.045em; line-height: .95; }
+  .contact .mail { display: inline-block; margin-top: 18px; font-size: clamp(17px, 1.6vw, 21px); box-shadow: inset 0 -2px 0 var(--red); overflow-wrap: anywhere; }
+  .contact .mail:hover { color: var(--red); }
+  .links { display: flex; gap: 28px; flex-wrap: wrap; margin-top: 40px; padding-top: 12px; border-top: 1px solid var(--hair); font-weight: 700; }
+  .links a:hover { color: var(--red); }
+  .foot { display: flex; justify-content: space-between; color: var(--grey); font-size: 13px; padding: 8px 0 28px; }
+
+  @media (max-width: 760px) {
+    .bar .n { grid-column: 1 / 9; } .bar .r { display: none; } .bar .l { grid-column: 9 / 13; }
+    .hero .intro { grid-column: 1 / -1; }
+    .s .lab, .s .body { grid-column: 1 / -1; } .s .lab { margin-bottom: 22px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="bar">
+    <div class="n">Francisco Javier Morales</div>
+    <div class="r">Madrid</div>
+    <div class="l"><button aria-pressed="true" data-set="en">EN</button><button aria-pressed="false" data-set="es">ES</button></div>
+  </div>
+
+  <header class="hero grid">
+    <h1><span lang="en">Local AI,<br>useful and<br><em>secure.</em></span><span lang="es">IA local,<br>útil y<br><em>segura.</em></span></h1>
+    <p class="intro">
+      <span lang="en">I research artificial intelligence and cyberintelligence. The rest of the time I build things I believe are worth having.</span>
+      <span lang="es">Investigo en inteligencia artificial y ciberinteligencia. El resto del tiempo hago cosas que creo que aportan valor.</span>
+    </p>
+  </header>
+
+  <section class="s grid">
+    <div class="lab"><span>01</span><span lang="en">Now</span><span lang="es">Ahora</span></div>
+    <ul class="body now">
+      <li><span lang="en">Researching local AI.</span><span lang="es">Investigar IA local.</span><small lang="en">PhD research, Universidad Politécnica de Madrid</small><small lang="es">Doctorado, Universidad Politécnica de Madrid</small></li>
+      <li><span lang="en">Building things that add value.</span><span lang="es">Hacer cosas que aporten valor.</span><small lang="en">Engineering in industry</small><small lang="es">Ingeniería en empresa</small></li>
+      <li><span lang="en">Teaching what I learn.</span><span lang="es">Enseñar lo que aprendo.</span></li>
+    </ul>
+  </section>
+
+  <section class="s grid">
+    <div class="lab"><span>02</span><span lang="en">Things I made</span><span lang="es">Cosas que he hecho</span></div>
+    <div class="body">
+      <div class="proj soon"><span class="i">01</span><h3>paper-repo</h3><span class="ar"><span lang="en">Soon</span><span lang="es">Próximamente</span></span>
+        <p lang="en">Talk to your research papers without them leaving your machine.</p><p lang="es">Habla con tus papers sin que salgan de tu ordenador.</p></div>
+      <a class="proj" href="#"><span class="i">02</span><h3>Montepío</h3><span class="ar">→</span>
+        <p lang="en">See where your savings could go.</p><p lang="es">Mira hasta dónde pueden llegar tus ahorros.</p></a>
+      <a class="proj" href="#"><span class="i">03</span><h3>QRated</h3><span class="ar">→</span>
+        <p lang="en">QR codes that look good in print.</p><p lang="es">Códigos QR que quedan bien impresos.</p></a>
+    </div>
+  </section>
+
+  <section class="s grid contact">
+    <div class="lab"><span>03</span><span lang="en">Contact</span><span lang="es">Contacto</span></div>
+    <div class="body">
+      <div class="big"><span lang="en">Let's talk.</span><span lang="es">Hablemos.</span></div>
+      <a class="mail" href="#">francisco.j.moralessp@gmail.com</a>
+      <div class="links"><a href="#">GitHub ↗</a><a href="#">LinkedIn ↗</a><a href="#">CV ↓</a></div>
+    </div>
+  </section>
+  <div class="foot"><span>Madrid, 2026</span><span lang="en">Set in Archivo</span><span lang="es">Compuesto en Archivo</span></div>
+
+</div>
+<script>
+  document.querySelectorAll('[data-set]').forEach(b => b.addEventListener('click', () => {
+    const l = b.dataset.set;
+    document.documentElement.className = l; document.documentElement.lang = l;
+    document.querySelectorAll('[data-set]').forEach(x => x.setAttribute('aria-pressed', x === b));
+  }));
+</script>
+</body>
+</html>
